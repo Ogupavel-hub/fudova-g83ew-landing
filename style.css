@@ -22,8 +22,7 @@ html, body { overflow-x:clip; }
     transition-duration:.12s;
   }
 
-  .target.active,
-  .target.hit {
+  .target.impact {
     position:fixed;
     top:9svh;
     right:20px;
