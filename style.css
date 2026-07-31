@@ -15,12 +15,21 @@ html, body { overflow-x:clip; }
     flex-direction:column;
     justify-content:center;
     min-height:82svh;
-    position:sticky;
-    top:9svh;
   }
 
   .target.hit,
   .target:nth-of-type(3).hit {
     transition-duration:.12s;
+  }
+
+  .target.active,
+  .target.hit {
+    position:fixed;
+    top:9svh;
+    right:20px;
+    left:20px;
+    z-index:3;
+    width:auto;
+    margin:0;
   }
 }
