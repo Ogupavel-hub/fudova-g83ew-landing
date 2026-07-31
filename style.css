@@ -8,6 +8,18 @@
 @media (max-width:760px) { .site-header { height:56px; padding:0 18px; font-size:12px; }.site-header span:not(.logo span) { display:none; }.logo { font-size:19px; }.hero,.reveal,.request { grid-template-columns:1fr; }.hero-text { padding:64px 24px 44px; }.hero h1 { font-size:clamp(58px,16vw,76px); }.hero-image { min-height:390px; }.fighter-stage { position:absolute; inset:0; height:100%; }.fight { min-height:3000px; }.fight-copy { padding:68px 20px; }.fight-copy>.eyebrow { margin-bottom:62px; font-size:16px; }.target,.target:nth-of-type(3) { width:100%; min-height:68svh; margin:0 0 185px; padding:28px 20px 34px; }.target h2 { font-size:clamp(46px,14vw,66px); line-height:.87; }.target p { max-width:30ch; font-size:14px; }.target.active { outline-width:2px; outline-offset:6px; }.target.hit,.target:nth-of-type(3).hit { transform:translateX(115vw) rotate(8deg); }.kick-overlay img { width:150vw; }.reveal-copy,.request { padding:70px 24px; }.grinder-reveal { min-height:460px; }.quote { padding:80px 24px; }.request { gap:40px; } footer { flex-direction:column; gap:8px; } } @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }.kick-overlay { display:none; }.target { transition:none; }.target.hit,.target:nth-of-type(3).hit { opacity:1; transform:none; filter:none; } }
 html, body { overflow-x:clip; }
 .fight { overflow-x:clip; }
+/* One pinned fight scene keeps the phrase and the kick on the same screen. */
+.fight { min-height:0; height:420vh; }
+.fight-scene { position:sticky; top:0; height:100svh; overflow:hidden; }
+.fight-scene .fighter-stage { position:absolute; inset:0; height:100%; }
+.fight-scene .fight-copy { position:absolute; inset:0; z-index:2; padding:0 54px; }
+.fight-scene .fight-copy>.eyebrow { position:absolute; top:12svh; left:54px; margin:0; }
+.fight-scene .target,
+.fight-scene .target:nth-of-type(3) { position:absolute; top:50%; right:54px; width:min(670px,72%); min-height:0; margin:0; transform:translate3d(var(--target-x,0),-50%,0); opacity:var(--target-opacity,0); filter:none; pointer-events:none; }
+.fight-scene .target:nth-of-type(3) { right:auto; left:54px; }
+.fight-scene .target.current { pointer-events:auto; }
+.fight-scene .target.hit,
+.fight-scene .target:nth-of-type(3).hit { transform:translate3d(var(--target-x,0),-50%,0); filter:none; }
 @media (max-width:760px) {
   .target,
   .target:nth-of-type(3) {
@@ -17,18 +29,15 @@ html, body { overflow-x:clip; }
     min-height:82svh;
   }
 
+  .fight { height:400svh; }
+  .fight-scene .fight-copy { padding:0 20px; }
+  .fight-scene .fight-copy>.eyebrow { top:8svh; left:20px; }
+  .fight-scene .target,
+  .fight-scene .target:nth-of-type(3) { top:50%; right:20px; left:20px; width:auto; min-height:68svh; }
+
   .target.hit,
   .target:nth-of-type(3).hit {
     transition-duration:.12s;
   }
 
-  .target.impact {
-    position:fixed;
-    top:9svh;
-    right:20px;
-    left:20px;
-    z-index:3;
-    width:auto;
-    margin:0;
-  }
 }

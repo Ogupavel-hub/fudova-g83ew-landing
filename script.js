@@ -23,10 +23,13 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const scaledProgress = Math.min(progress * targets.length, targets.length - 0.001);
     const activeIndex = Math.floor(scaledProgress);
     const phase = scaledProgress - activeIndex;
-    const kickStart = 0.44;
-    const kickImpact = 0.65;
-    const kickEnd = 0.8;
+    const kickStart = 0.28;
+    const kickImpact = 0.56;
+    const kickEnd = 0.86;
     const activeTarget = targets[activeIndex];
+    targets.forEach((target, index) => {
+      target.classList.toggle('current', index === activeIndex);
+    });
     const headline = activeTarget.querySelector('h2').getBoundingClientRect();
     const imageWidth = kickImage.offsetWidth;
     const imageScale = imageWidth / 956;
@@ -53,9 +56,13 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
     targets.forEach((target, index) => {
       const isCurrent = index === activeIndex;
+      const exitProgress = isCurrent && phase >= kickImpact
+        ? Math.min(1, (phase - kickImpact) / (kickEnd - kickImpact))
+        : 0;
       target.classList.toggle('active', isCurrent && phase < kickImpact);
-      target.classList.toggle('hit', index < activeIndex || (isCurrent && phase >= kickImpact));
-      target.classList.toggle('impact', isCurrent && phase >= kickStart && phase <= kickEnd);
+      target.classList.toggle('hit', isCurrent && phase >= kickImpact);
+      target.style.setProperty('--target-x', `${exitProgress * 145}vw`);
+      target.style.setProperty('--target-opacity', `${isCurrent ? 1 - Math.max(0, exitProgress - 0.72) / 0.28 : 0}`);
     });
 
     kickOverlay.style.setProperty('--kick-x', `${kickX}px`);
