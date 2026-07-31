@@ -15,7 +15,7 @@ html, body { overflow-x:clip; }
 .fight-scene .fight-copy { position:absolute; inset:0; z-index:2; padding:0 54px; }
 .fight-scene .fight-copy>.eyebrow { position:absolute; top:12svh; left:54px; margin:0; }
 .fight-scene .target,
-.fight-scene .target:nth-of-type(3) { position:absolute; top:50%; right:54px; width:min(670px,72%); min-height:0; margin:0; transform:translate3d(var(--target-x,0),-50%,0); opacity:var(--target-opacity,0); filter:none; pointer-events:none; }
+.fight-scene .target:nth-of-type(3) { position:absolute; top:50%; right:54px; width:min(670px,72%); min-height:0; margin:0; transform:translate3d(var(--target-x,0),-50%,0); opacity:var(--target-opacity,0); filter:none; pointer-events:none; transition:opacity .08s linear,border-color .12s linear,outline-color .12s linear; will-change:transform; }
 .fight-scene .target:nth-of-type(3) { right:auto; left:54px; }
 .fight-scene .target.current { pointer-events:auto; }
 .fight-scene .target.hit,
