@@ -53,8 +53,8 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
     targets.forEach((target, index) => {
       const isCurrent = index === activeIndex;
-      target.classList.toggle('active', isCurrent && phase < kickEnd);
-      target.classList.toggle('hit', index < activeIndex || (isCurrent && phase >= kickEnd));
+      target.classList.toggle('active', isCurrent && phase < kickImpact);
+      target.classList.toggle('hit', index < activeIndex || (isCurrent && phase >= kickImpact));
     });
 
     kickOverlay.style.setProperty('--kick-x', `${kickX}px`);

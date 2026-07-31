@@ -8,3 +8,19 @@
 @media (max-width:760px) { .site-header { height:56px; padding:0 18px; font-size:12px; }.site-header span:not(.logo span) { display:none; }.logo { font-size:19px; }.hero,.reveal,.request { grid-template-columns:1fr; }.hero-text { padding:64px 24px 44px; }.hero h1 { font-size:clamp(58px,16vw,76px); }.hero-image { min-height:390px; }.fighter-stage { position:absolute; inset:0; height:100%; }.fight { min-height:3000px; }.fight-copy { padding:68px 20px; }.fight-copy>.eyebrow { margin-bottom:62px; font-size:16px; }.target,.target:nth-of-type(3) { width:100%; min-height:68svh; margin:0 0 185px; padding:28px 20px 34px; }.target h2 { font-size:clamp(46px,14vw,66px); line-height:.87; }.target p { max-width:30ch; font-size:14px; }.target.active { outline-width:2px; outline-offset:6px; }.target.hit,.target:nth-of-type(3).hit { transform:translateX(115vw) rotate(8deg); }.kick-overlay img { width:150vw; }.reveal-copy,.request { padding:70px 24px; }.grinder-reveal { min-height:460px; }.quote { padding:80px 24px; }.request { gap:40px; } footer { flex-direction:column; gap:8px; } } @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }.kick-overlay { display:none; }.target { transition:none; }.target.hit,.target:nth-of-type(3).hit { opacity:1; transform:none; filter:none; } }
 html, body { overflow-x:clip; }
 .fight { overflow-x:clip; }
+@media (max-width:760px) {
+  .target,
+  .target:nth-of-type(3) {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    min-height:82svh;
+    position:sticky;
+    top:9svh;
+  }
+
+  .target.hit,
+  .target:nth-of-type(3).hit {
+    transition-duration:.12s;
+  }
+}
