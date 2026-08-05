@@ -31,3 +31,27 @@ if (gallery) {
   next.addEventListener('click', () => showSlide(activeIndex + 1));
   dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
 }
+
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const fighters = document.querySelectorAll('.slide-fighter');
+  let frameScheduled = false;
+
+  const updateFighterFlight = () => {
+    fighters.forEach((fighter) => {
+      const card = fighter.closest('.target');
+      const rect = card.getBoundingClientRect();
+      const progress = Math.max(-1, Math.min(1, (window.innerHeight / 2 - rect.top) / window.innerHeight));
+      fighter.style.setProperty('--flight-y', `${progress * 34}%`);
+    });
+    frameScheduled = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!frameScheduled) {
+      frameScheduled = true;
+      requestAnimationFrame(updateFighterFlight);
+    }
+  }, { passive: true });
+
+  updateFighterFlight();
+}
