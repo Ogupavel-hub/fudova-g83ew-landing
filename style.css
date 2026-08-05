@@ -15,9 +15,11 @@ html, body { overflow-x:clip; }
 .fight .target,.fight .target:nth-of-type(3) { position:relative; width:min(720px,100%); min-height:460px; margin:0 0 48px auto; padding:44px 42px; overflow:hidden; transform:none; opacity:1; filter:none; background:rgb(15 8 9 / .88); }
 .fight .target:nth-of-type(3) { margin-right:auto; margin-left:0; }
 .fight-quote { margin:0 0 48px; }
-.fight .fight-quote { padding:56px 42px; }
+.fight .quote.fight-quote { padding:22px 36px; }
+.fight .quote.fight-quote p { font-size:clamp(26px,3vw,38px); }
+.fight .quote.fight-quote span { margin-top:10px; }
 .slide-fighter { position:absolute; z-index:0; right:3%; bottom:-12%; width:min(560px,66vw); filter:drop-shadow(0 18px 12px rgb(0 0 0 / .45)); transform:translateY(var(--flight-y,0)) rotate(83deg); pointer-events:none; will-change:transform; }
-.hongkong-interlude { position:relative; overflow:hidden; width:min(720px,100%); margin:0 0 48px auto; padding:36px 44px; background:var(--red); text-align:center; }.hongkong-interlude:before,.hongkong-interlude:after { content:""; position:absolute; top:-56px; width:150px; aspect-ratio:1; border-radius:50%; background:var(--gold); opacity:.82; }.hongkong-interlude:before { left:-42px; }.hongkong-interlude:after { right:-42px; }.hongkong-interlude span,.hongkong-interlude p,.hongkong-interlude small { position:relative; z-index:1; }.hongkong-interlude span { color:var(--ink); font:20px "Bebas Neue",sans-serif; letter-spacing:.1em; }.hongkong-interlude p { margin:12px 0; font:clamp(34px,4vw,54px)/.9 "Bebas Neue",sans-serif; }.hongkong-interlude i { color:var(--gold); font-style:normal; }.hongkong-interlude small { display:block; max-width:38ch; margin:auto; color:oklch(.98 .01 70); line-height:1.5; }
+.hongkong-interlude { position:relative; overflow:hidden; width:min(720px,100%); margin:0 0 30px auto; padding:20px 32px; background:var(--red); text-align:center; }.hongkong-interlude:before,.hongkong-interlude:after { content:""; position:absolute; top:-56px; width:150px; aspect-ratio:1; border-radius:50%; background:var(--gold); opacity:.82; }.hongkong-interlude:before { left:-42px; }.hongkong-interlude:after { right:-42px; }.hongkong-interlude span,.hongkong-interlude p,.hongkong-interlude small { position:relative; z-index:1; }.hongkong-interlude span { color:var(--ink); font:17px "Bebas Neue",sans-serif; letter-spacing:.1em; }.hongkong-interlude p { margin:6px 0; font:clamp(28px,3vw,38px)/.9 "Bebas Neue",sans-serif; }.hongkong-interlude i { color:var(--gold); font-style:normal; }.hongkong-interlude small { display:block; max-width:38ch; margin:auto; color:oklch(.98 .01 70); line-height:1.35; font-size:11px; }
 .target>*:not(.slide-fighter) { position:relative; z-index:1; }
 .target h2,.target p,.target span { transition:transform .18s ease,filter .18s ease; }
 /* One pinned fight scene keeps the phrase and the kick on the same screen. */
@@ -37,8 +39,9 @@ html, body { overflow-x:clip; }
   .fight .fight-copy>.eyebrow { margin-bottom:38px; }
   .fight .target,.fight .target:nth-of-type(3) { width:100%; min-height:440px; margin-bottom:30px; padding:30px 22px; }
   .slide-fighter { right:-6%; bottom:-8%; width:106vw; }
-  .hongkong-interlude { width:100%; margin-bottom:30px; padding:30px 22px; }
-  .fight .fight-quote { padding:36px 22px; }
+  .hongkong-interlude { width:100%; margin-bottom:22px; padding:18px 18px; }
+  .fight .quote.fight-quote { padding:18px 18px; }
+  .fight .quote.fight-quote p { font-size:clamp(24px,7vw,30px); }
   .target-weight p { max-width:none; white-space:nowrap; font-size:13px; letter-spacing:-.02em; }
   .target-price h2 { font-size:clamp(40px,12vw,56px); }
   .target,
