@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1050" viewBox="0 0 1680 1050">
+  <rect width="1680" height="1050" fill="#ffffff"/>
+  <style>
+    .title{font:700 44px Arial,Helvetica,sans-serif;fill:#111}.label{font:400 26px Arial,Helvetica,sans-serif;fill:#262626}.value{font:700 26px Arial,Helvetica,sans-serif;fill:#171717}.small{font:700 23px Arial,Helvetica,sans-serif;fill:#171717}
+  </style>
+  <text x="24" y="55" class="title">Ключевые характеристики</text>
+  <g transform="translate(24 90)">
+    <rect width="1632" height="896" fill="#fff" stroke="#d5d5d5" stroke-width="2"/>
+    <g fill="#f6f6f6"><rect x="0" y="0" width="340" height="896"/><rect x="820" y="0" width="324" height="896"/></g>
+    <g stroke="#d5d5d5" stroke-width="2"><path d="M340 0V896M820 0V896M1144 0V896"/><path d="M0 128H1632M0 256H1632M0 384H1632M0 512H1632M0 640H1632M0 768H1632"/></g>
+    <g class="label"><text x="24" y="76">Вместимость</text><text x="24" y="204">Диаметр жерновов</text><text x="24" y="332">Материал корпуса</text><text x="24" y="460">Гарантия</text><text x="24" y="588">Язык интерфейса</text><text x="24" y="716">Страна происхождения</text><text x="24" y="844">Номер модели</text></g>
+    <g class="value"><text x="364" y="76">1100 г</text><text x="364" y="204">83 мм</text><text x="364" y="332">Алюминий</text><text x="364" y="460">1 год</text><text x="364" y="588">Английский, испанский</text><text x="364" y="716">Фуцзянь, Китай</text><text x="364" y="844">G83EW</text></g>
+    <g class="label"><text x="844" y="76">Тип</text><text x="844" y="204">Мощность</text><text x="844" y="332">Материал жерновов</text><text x="844" y="460">Функции</text><text x="844" y="588">Тип упаковки</text><text x="844" y="716">Бренд</text><text x="844" y="844">Напряжение</text></g>
+    <g class="value"><text x="1168" y="204">600 Вт</text><text x="1168" y="332">Нержавеющая сталь</text><text x="1168" y="588">Гофрокороб</text><text x="1168" y="716">BALENARE</text><text x="1168" y="844">220–240 В</text></g>
+    <g class="small"><text x="1168" y="62">Жерновая кофемолка</text><text x="1168" y="94">(плоские жернова)</text><text x="1168" y="442">Лёгкая очистка, простое управление,</text><text x="1168" y="476">сенсорное управление, LED-дисплей</text></g>
+  </g>
+</svg>
