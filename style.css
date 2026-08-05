@@ -105,11 +105,13 @@ html, body { overflow-x:clip; }
 .review-video video { display:block; width:100%; aspect-ratio:9/16; background:#000; }
 
 @media (max-width:760px) {
-  .hero { min-height:calc(100svh - 56px); grid-template-rows:.88fr 1.12fr; }
-  .hero-text { min-height:0; padding:46px 24px 28px; justify-content:flex-end; }
-  .hero h1 { font-size:clamp(67px,18vw,94px); }
-  .hero-image { min-height:0; }
-  .hero-image:after { background:linear-gradient(0deg,var(--ink),transparent 24%); }
+  .hero { position:relative; display:block; min-height:calc(100svh - 56px); }
+  .hero-image { position:absolute; inset:0; min-height:0; }
+  .hero-image img { object-position:62% center; }
+  .hero-image:after { background:linear-gradient(90deg,rgb(15 8 9 / .95) 0%,rgb(15 8 9 / .66) 45%,transparent 100%),linear-gradient(0deg,rgb(15 8 9 / .92) 0%,transparent 52%); }
+  .hero-text { position:relative; z-index:1; min-height:calc(100svh - 56px); padding:0 24px 56px; justify-content:flex-end; }
+  .hero h1 { font-size:clamp(62px,17vw,82px); line-height:.87; }
+  .hero-text>p:first-child { margin-bottom:12px; font-size:16px; }
   .spec-gallery,.review { padding:72px 20px; }
   .gallery-heading { display:block; margin-bottom:30px; }
   .gallery-frame { min-height:320px; }
