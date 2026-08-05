@@ -23,6 +23,7 @@ html, body { overflow-x:clip; }
 .target>*:not(.slide-fighter) { position:relative; z-index:1; }
 .target h2,.target p,.target span { transition:transform .18s ease,filter .18s ease; }
 .fight .target p { font-size:20px; }
+.target-price h2 { color:var(--paper); }
 /* One pinned fight scene keeps the phrase and the kick on the same screen. */
 .fight { min-height:0; height:420vh; }
 .fight-scene { position:sticky; top:0; height:100svh; overflow:hidden; }
