@@ -22,6 +22,7 @@ html, body { overflow-x:clip; }
 .hongkong-interlude { position:relative; overflow:hidden; width:min(720px,100%); margin:0 0 30px auto; padding:20px 32px; background:var(--red); text-align:center; }.hongkong-interlude:before,.hongkong-interlude:after { content:""; position:absolute; top:-56px; width:150px; aspect-ratio:1; border-radius:50%; background:var(--gold); opacity:.82; }.hongkong-interlude:before { left:-42px; }.hongkong-interlude:after { right:-42px; }.hongkong-interlude span,.hongkong-interlude p,.hongkong-interlude small { position:relative; z-index:1; }.hongkong-interlude span { color:var(--ink); font:17px "Bebas Neue",sans-serif; letter-spacing:.1em; }.hongkong-interlude p { margin:6px 0; font:clamp(28px,3vw,38px)/.9 "Bebas Neue",sans-serif; }.hongkong-interlude i { color:var(--gold); font-style:normal; }.hongkong-interlude small { display:block; max-width:38ch; margin:auto; color:oklch(.98 .01 70); line-height:1.35; font-size:11px; }
 .target>*:not(.slide-fighter) { position:relative; z-index:1; }
 .target h2,.target p,.target span { transition:transform .18s ease,filter .18s ease; }
+.fight .target p { font-size:20px; }
 /* One pinned fight scene keeps the phrase and the kick on the same screen. */
 .fight { min-height:0; height:420vh; }
 .fight-scene { position:sticky; top:0; height:100svh; overflow:hidden; }
@@ -42,7 +43,8 @@ html, body { overflow-x:clip; }
   .hongkong-interlude { width:100%; margin-bottom:22px; padding:18px 18px; }
   .fight .quote.fight-quote { padding:18px 18px; }
   .fight .quote.fight-quote p { font-size:clamp(24px,7vw,30px); }
-  .target-weight p { max-width:none; white-space:nowrap; font-size:13px; letter-spacing:-.02em; }
+  .fight .target p { font-size:16px; }
+  .fight .target-weight p { max-width:none; white-space:nowrap; font-size:14px; letter-spacing:-.03em; }
   .target-price h2 { font-size:clamp(40px,12vw,56px); }
   .target,
   .target:nth-of-type(3) {
