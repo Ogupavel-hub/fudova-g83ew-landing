@@ -45,7 +45,7 @@ html, body { overflow-x:clip; }
   .fight .quote.fight-quote { padding:18px 18px; }
   .fight .quote.fight-quote p { font-size:clamp(24px,7vw,30px); }
   .fight .target p { font-size:18px; }
-  .fight .target-weight p { max-width:none; white-space:nowrap; font-size:14px; letter-spacing:-.03em; }
+  .fight .target-weight p { max-width:none; white-space:nowrap; font-size:16px; letter-spacing:-.06em; }
   .target-price h2 { font-size:clamp(40px,12vw,56px); }
   .target,
   .target:nth-of-type(3) {
