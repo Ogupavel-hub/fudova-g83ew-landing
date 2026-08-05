@@ -8,30 +8,6 @@ form.addEventListener('submit', (event) => {
   form.reset();
 });
 
-const gallery = document.querySelector('.spec-gallery');
-
-if (gallery) {
-  const slides = [...gallery.querySelectorAll('.gallery-slide')];
-  const dots = [...gallery.querySelectorAll('.gallery-dots button')];
-  const previous = gallery.querySelector('[data-gallery-prev]');
-  const next = gallery.querySelector('[data-gallery-next]');
-  let activeIndex = 0;
-
-  const showSlide = (index) => {
-    activeIndex = (index + slides.length) % slides.length;
-    slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeIndex));
-    dots.forEach((dot, dotIndex) => {
-      const isActive = dotIndex === activeIndex;
-      dot.classList.toggle('is-active', isActive);
-      dot.setAttribute('aria-current', String(isActive));
-    });
-  };
-
-  previous.addEventListener('click', () => showSlide(activeIndex - 1));
-  next.addEventListener('click', () => showSlide(activeIndex + 1));
-  dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
-}
-
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const fighters = document.querySelectorAll('.slide-fighter');
   let frameScheduled = false;
