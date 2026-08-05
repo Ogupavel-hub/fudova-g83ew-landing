@@ -8,19 +8,26 @@ form.addEventListener('submit', (event) => {
   form.reset();
 });
 
-if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const fighters = document.querySelectorAll('.slide-fighter');
-  let scheduled = false;
-  const updateFighters = () => {
-    fighters.forEach((fighter) => {
-      const rect = fighter.closest('.target').getBoundingClientRect();
-      const progress = Math.max(-1, Math.min(1, (window.innerHeight / 2 - rect.top) / window.innerHeight));
-      fighter.style.setProperty('--flight-y', `${progress * 34}%`);
+const gallery = document.querySelector('.spec-gallery');
+
+if (gallery) {
+  const slides = [...gallery.querySelectorAll('.gallery-slide')];
+  const dots = [...gallery.querySelectorAll('.gallery-dots button')];
+  const previous = gallery.querySelector('[data-gallery-prev]');
+  const next = gallery.querySelector('[data-gallery-next]');
+  let activeIndex = 0;
+
+  const showSlide = (index) => {
+    activeIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeIndex));
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === activeIndex;
+      dot.classList.toggle('is-active', isActive);
+      dot.setAttribute('aria-current', String(isActive));
     });
-    scheduled = false;
   };
-  window.addEventListener('scroll', () => {
-    if (!scheduled) { scheduled = true; requestAnimationFrame(updateFighters); }
-  }, { passive: true });
-  updateFighters();
+
+  previous.addEventListener('click', () => showSlide(activeIndex - 1));
+  next.addEventListener('click', () => showSlide(activeIndex + 1));
+  dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
 }
