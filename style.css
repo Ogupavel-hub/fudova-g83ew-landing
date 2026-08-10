@@ -79,6 +79,7 @@ html, body { overflow-x:clip; }
   }
 
 }
+
 .fight { height:auto; }
 @media (max-width:760px) { .fight { height:auto; } }
 
@@ -164,4 +165,40 @@ html, body { overflow-x:clip; }
 
 @media (prefers-reduced-motion:reduce) {
   .slide-fighter { transition:none; }
+}
+
+/* Mobile hero: the machine stays unobscured above the copy. */
+.hero-image img { filter:brightness(1.25) saturate(.92) contrast(1.03); }
+.review-teaser { display:block; transition:transform .2s ease,filter .2s ease; }
+.review-teaser:hover { transform:translateY(-3px); filter:brightness(1.08); }
+
+@media (max-width:760px) {
+  .hero {
+    display:grid;
+    min-height:calc(100svh - 56px);
+    grid-template-columns:1fr;
+    grid-template-rows:52svh auto;
+  }
+  .hero-image {
+    position:relative;
+    inset:auto;
+    order:-1;
+    min-height:0;
+    overflow:hidden;
+  }
+  .hero-image img {
+    object-position:center 62%;
+    transform:scale(1.38);
+    transform-origin:center 62%;
+    filter:brightness(1.38) saturate(.95) contrast(1.01);
+  }
+  .hero-image:after { background:linear-gradient(0deg,rgb(15 8 9 / .3),transparent 34%); }
+  .hero-text {
+    position:relative;
+    z-index:1;
+    min-height:0;
+    padding:28px 24px 42px;
+    justify-content:flex-start;
+    background:var(--ink);
+  }
 }
