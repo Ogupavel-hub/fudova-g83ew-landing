@@ -169,8 +169,7 @@ html, body { overflow-x:clip; }
 
 /* Mobile hero: the machine stays unobscured above the copy. */
 .hero-image img { filter:brightness(1.25) saturate(.92) contrast(1.03); }
-.review-teaser { display:block; transition:transform .2s ease,filter .2s ease; }
-.review-teaser:hover { transform:translateY(-3px); filter:brightness(1.08); }
+.review-teaser { display:block; }
 
 @media (max-width:760px) {
   .hero {
