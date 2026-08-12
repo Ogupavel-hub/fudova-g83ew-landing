@@ -171,6 +171,8 @@ html, body { overflow-x:clip; }
   .slide-fighter { transition:none; }
 }
 
+.request .cta:disabled { cursor:wait; opacity:.65; transform:none; }
+
 /* Mobile hero: the machine stays unobscured above the copy. */
 .hero-image img { filter:brightness(1.25) saturate(.92) contrast(1.03); }
 .review-teaser { display:block; }

@@ -3,9 +3,34 @@ const status = document.querySelector('.form-status');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const name = new FormData(form).get('name').trim();
-  status.textContent = `${name ? `${name}, ` : ''}заявка принята. Скоро свяжемся.`;
-  form.reset();
+  const endpoint = form.dataset.sheetEndpoint;
+  const data = Object.fromEntries(new FormData(form).entries());
+  const submitButton = form.querySelector('[type="submit"]');
+
+  if (!endpoint) {
+    status.textContent = 'Форма временно настраивается. Попробуйте позже.';
+    return;
+  }
+
+  submitButton.disabled = true;
+  status.textContent = 'Отправляем заявку…';
+
+  fetch(endpoint, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({ ...data, source: window.location.href }),
+  })
+    .then(() => {
+      status.textContent = `${data.name ? `${data.name}, ` : ''}заявка принята. Скоро свяжемся.`;
+      form.reset();
+    })
+    .catch(() => {
+      status.textContent = 'Не удалось отправить заявку. Попробуйте ещё раз.';
+    })
+    .finally(() => {
+      submitButton.disabled = false;
+    });
 });
 
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
